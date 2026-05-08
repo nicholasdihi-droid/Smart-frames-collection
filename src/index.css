@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-burgundy: #8B0000;
+  --color-gold: #FFD700;
+  --color-gold-dark: #ccac00;
+  --color-cream: #FFF8E7;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-black bg-white selection:bg-gold/30;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.bg-burgundy { background-color: var(--color-burgundy); }
+.text-burgundy { color: var(--color-burgundy); }
+.border-burgundy { border-color: var(--color-burgundy); }
+.bg-gold { background-color: var(--color-gold); }
+.text-gold { color: var(--color-gold); }
+.border-gold { border-color: var(--color-gold); }
+
+/* Luxury Overlay Effect */
+.luxury-gradient {
+  background: linear-gradient(135deg, #8B0000 0%, #4a0000 100%);
+}
+
+.luxury-card {
+  @apply bg-white rounded-xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gold/10;
+}
+
+.btn-primary {
+  @apply bg-gold text-burgundy font-bold px-8 py-3 rounded-lg transition-all hover:bg-gold-dark flex items-center justify-center gap-2;
+}
+
+.btn-secondary {
+  @apply bg-burgundy text-white font-bold px-8 py-3 rounded-lg transition-all hover:bg-red-950 flex items-center justify-center gap-2;
+}
